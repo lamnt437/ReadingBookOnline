@@ -15,6 +15,7 @@ $factory->define(Book::class, function (Faker $faker) {
         'time_publish' => $faker->year($max = 'now'),
         'summary' => $faker->sentence,
         'content' => 'https://archive.org/embed/airplanephotogra00ivesuoft',
+        'image' => 'https://archive.org/services/img/airplanephotogra00ivesuoft',
         'language' => $faker->word,
         'author_id' => function() {
         	$authors = Author::all()->toArray();
@@ -25,7 +26,7 @@ $factory->define(Book::class, function (Faker $faker) {
         'publisher_id' => function() {
         	$publishers = Publisher::all()->toArray();
         	$publisher_index = array_rand($publishers);
-        	$publisher = $authors[$publisher_index];
+        	$publisher = $publishers[$publisher_index];
         	return $publisher['id'];
         },
         'category_id' => function() {

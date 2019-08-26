@@ -19,6 +19,8 @@ class CreateCommentsTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->integer('book_id')->unsigned();
             $table->dateTime('time');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('book_id')->references('id')->on('books');
         });
     }
 

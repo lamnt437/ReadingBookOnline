@@ -17,23 +17,23 @@ $factory->define(Book::class, function (Faker $faker) {
         'content' => 'https://archive.org/embed/airplanephotogra00ivesuoft',
         'image' => 'https://archive.org/services/img/airplanephotogra00ivesuoft',
         'language' => $faker->word,
-        'author_id' => function() {
-        	$authors = Author::all()->toArray();
-        	$author_index = array_rand($authors);
-        	$author = $authors[$author_index];
-        	return $author['id'];
-        },
+        // 'author_id' => function() {
+        // 	$authors = Author::all()->toArray();
+        // 	$author_index = array_rand($authors);
+        // 	$author = $authors[$author_index];
+        // 	return $author['id'];
+        // },
         'publisher_id' => function() {
         	$publishers = Publisher::all()->toArray();
         	$publisher_index = array_rand($publishers);
         	$publisher = $publishers[$publisher_index];
         	return $publisher['id'];
         },
-        'category_id' => function() {
-        	$categories = Category::all()->toArray();
-        	$category_index = array_rand($categories);
-        	$category = $categories[$category_index];
-        	return $category['id'];
-        },
+        // 'category_id' => function() {
+        // 	$categories = Category::all()->toArray();
+        // 	$category_index = array_rand($categories);
+        // 	$category = $categories[$category_index];
+        // 	return $category['id'];
+        // },
     ];
 });

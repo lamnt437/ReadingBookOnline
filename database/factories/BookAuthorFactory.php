@@ -4,17 +4,18 @@
 
 use App\Model;
 use Faker\Generator as Faker;
+use App\Relations\BookAuthor;
 use App\Book;
 use App\Author;
 
-$factory->define(Author::class, function (Faker $faker) {
+$factory->define(BookAuthor::class, function (Faker $faker) {
     return [
         'book_id' => function() {
         	$books = Book::all()->toArray();
         	$book_index = array_rand($books);
         	$book = $books[$book_index];
         	return $book['id'];
-        }
+        },
 
         'author_id' => function() {
         	$authors = Author::all()->toArray();

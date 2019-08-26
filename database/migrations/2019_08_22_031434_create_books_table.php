@@ -25,6 +25,7 @@ class CreateBooksTable extends Migration
             $table->integer('category_id')->unsigned();
             $table->string('image');
             $table->timestamps();
+            $table->foreign('publisher_id')->references('id')->on('publishers');
         });
     }
 

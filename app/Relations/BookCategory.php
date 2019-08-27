@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Book;
 use App\Category;
 
-class BookCategory.php extends Model
+class BookCategory extends Model
 {
     protected $table = 'book_category';
 
